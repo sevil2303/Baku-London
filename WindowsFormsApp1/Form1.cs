@@ -127,7 +127,7 @@ namespace WindowsFormsApp1
         private void BakuTimer_Tick(object sender, EventArgs e)
         {
             bakuLbl.Text = $"Time : {DateTime.Now:HH:mm:ss}";
-            bakuDate.Text = DateTime.Now.AddHours(-4).ToLongDateString();
+            bakuDate.Text = DateTime.Now.ToLongDateString();
         }
 
     }
