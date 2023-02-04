@@ -18,17 +18,22 @@ namespace WindowsFormsApp1
         Label bakuDate = new Label();
         Label londonLbl = new Label();
         Label londonDate = new Label();
+        Timer londonTimer = new Timer();
+        Timer bakuTimer = new Timer();
+        Timer mytimer = new Timer();
+        System.Media.SoundPlayer londonMusic = new System.Media.SoundPlayer(Properties.Resources.clock_ticking_2);
+        System.Media.SoundPlayer bakuMusic = new System.Media.SoundPlayer(Properties.Resources.clock_ticking_5);
         public Form1()
         {
             InitializeComponent();           
-            Timer mytimer = new Timer();
             mytimer.Interval = 1000;
             mytimer.Tick += Mytimer_Tick;
-            mytimer.Start();
+            mytimer.Start();       
         }
 
         private void Mytimer_Tick(object sender, EventArgs e)
         {
+            bakuMusic.Play();
             bakuTime.Text = $"Time : {DateTime.Now:HH:mm:ss}";
             bakuDateLbl.Text = DateTime.Now.ToLongDateString();
         }
@@ -40,6 +45,9 @@ namespace WindowsFormsApp1
 
         private void londonbtn_MouseClick(object sender, MouseEventArgs e)
         {
+            mytimer.Stop();
+            bakuTimer.Stop();
+            bakuMusic.Stop();
             foreach (var control in Controls)
             {
                 if (control is Label)
@@ -66,7 +74,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(londonLbl);
             this.Controls.Add(londonDate);
             
-            Timer londonTimer = new Timer();
             londonTimer.Interval = 1000;
             londonTimer.Tick += LondonTimer_Tick;
             londonTimer.Start();
@@ -74,12 +81,16 @@ namespace WindowsFormsApp1
 
         private void LondonTimer_Tick(object sender, EventArgs e)
         {
+            londonMusic.Play();
             londonLbl.Text = $"Time : {DateTime.Now.AddHours(-4):HH:mm:ss}";
             londonDate.Text = DateTime.Now.ToLongDateString();
         }
 
         private void bakubtn_MouseClick_1(object sender, MouseEventArgs e)
         {
+            mytimer.Stop();
+            londonTimer.Stop();
+            londonMusic.Stop();
             foreach (var control in Controls)
             {
                 if (control is Label)
@@ -104,13 +115,13 @@ namespace WindowsFormsApp1
             bakuLbl.Visible = true;
             this.Controls.Add(bakuLbl);
             this.Controls.Add(bakuDate);
-            Timer bakuTimer = new Timer();
             bakuTimer.Interval = 1000;
             bakuTimer.Tick += BakuTimer_Tick;
             bakuTimer.Start();
         }
         private void BakuTimer_Tick(object sender, EventArgs e)
         {
+            bakuMusic.Play();
             bakuLbl.Text = $"Time : {DateTime.Now:HH:mm:ss}";
             bakuDate.Text = DateTime.Now.AddHours(-4).ToLongDateString();
         }
