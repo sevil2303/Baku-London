@@ -81,6 +81,24 @@ namespace WindowsFormsApp1.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream clock_ticking_2 {
+            get {
+                return ResourceManager.GetStream("clock_ticking_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream clock_ticking_5 {
+            get {
+                return ResourceManager.GetStream("clock_ticking_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap IMG_2431 {
@@ -111,12 +129,30 @@ namespace WindowsFormsApp1.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Ralph_McTell_Streets_of_London {
+            get {
+                return ResourceManager.GetStream("Ralph_McTell_Streets_of_London", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap ss_d2826f9ae09275627e1ac577ce5c5156c1df88ad_1920x1080 {
             get {
                 object obj = ResourceManager.GetObject("ss_d2826f9ae09275627e1ac577ce5c5156c1df88ad.1920x1080", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Vagif_Mustafazade___Baki_gecalari {
+            get {
+                return ResourceManager.GetStream("Vagif_Mustafazade___Baki_gecalari", resourceCulture);
             }
         }
     }

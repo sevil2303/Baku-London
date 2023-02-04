@@ -18,15 +18,26 @@ namespace WindowsFormsApp1
         Label bakuDate = new Label();
         Label londonLbl = new Label();
         Label londonDate = new Label();
+        Timer mytimer = new Timer();
+        Timer londonTimer = new Timer();
+        Timer bakuTimer = new Timer();
+        System.Media.SoundPlayer bakuBackground=new System.Media.SoundPlayer(Properties.Resources.Vagif_Mustafazade___Baki_gecalari);
+        System.Media.SoundPlayer londonBackground=new System.Media.SoundPlayer(Properties.Resources.Ralph_McTell_Streets_of_London);
         public Form1()
         {
-            InitializeComponent();           
-            Timer mytimer = new Timer();
+            InitializeComponent();
+            bakuBackground.Play();
             mytimer.Interval = 1000;
             mytimer.Tick += Mytimer_Tick;
             mytimer.Start();
         }
-
+        public void Play(string audioPath)
+        {
+            var p1 = new System.Windows.Media.MediaPlayer();
+            p1.Open(new System.Uri(audioPath));
+            p1.Play();
+        }
+       
         private void Mytimer_Tick(object sender, EventArgs e)
         {
             bakuTime.Text = $"Time : {DateTime.Now:HH:mm:ss}";
@@ -37,9 +48,11 @@ namespace WindowsFormsApp1
         {
 
         }
-
         private void londonbtn_MouseClick(object sender, MouseEventArgs e)
         {
+            mytimer.Stop();
+            bakuTimer.Stop();
+            
             foreach (var control in Controls)
             {
                 if (control is Label)
@@ -47,10 +60,11 @@ namespace WindowsFormsApp1
                     (control as Label).Visible = false;
                 }
             }
+            bakuBackground.Stop();  
+            londonBackground.Play();
             this.BackgroundImage = Resources._55_552679_london_wallpapers_hd_a6_data_src_london_street;
             londonLbl.Text = "London";
-            londonLbl.ForeColor = Color.Black;
-            
+            londonLbl.ForeColor = Color.Black;          
             londonLbl.BackColor = Color.Transparent;
             londonLbl.Location = new Point(15, 510);
             londonLbl.AutoSize = true;
@@ -64,9 +78,7 @@ namespace WindowsFormsApp1
             londonLbl.Visible = true;
             londonDate.Visible = true;
             this.Controls.Add(londonLbl);
-            this.Controls.Add(londonDate);
-            
-            Timer londonTimer = new Timer();
+            this.Controls.Add(londonDate);      
             londonTimer.Interval = 1000;
             londonTimer.Tick += LondonTimer_Tick;
             londonTimer.Start();
@@ -75,11 +87,15 @@ namespace WindowsFormsApp1
         private void LondonTimer_Tick(object sender, EventArgs e)
         {
             londonLbl.Text = $"Time : {DateTime.Now.AddHours(-4):HH:mm:ss}";
-            londonDate.Text = DateTime.Now.ToLongDateString();
+            londonDate.Text = DateTime.Now.AddHours(-4).ToLongDateString();
         }
 
         private void bakubtn_MouseClick_1(object sender, MouseEventArgs e)
         {
+            mytimer.Stop();
+            londonBackground.Stop();    
+            bakuBackground.Play();
+            londonTimer.Stop();
             foreach (var control in Controls)
             {
                 if (control is Label)
@@ -104,7 +120,6 @@ namespace WindowsFormsApp1
             bakuLbl.Visible = true;
             this.Controls.Add(bakuLbl);
             this.Controls.Add(bakuDate);
-            Timer bakuTimer = new Timer();
             bakuTimer.Interval = 1000;
             bakuTimer.Tick += BakuTimer_Tick;
             bakuTimer.Start();

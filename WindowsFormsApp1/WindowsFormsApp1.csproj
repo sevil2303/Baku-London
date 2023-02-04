@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,6 +45,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
@@ -97,6 +99,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\55-552679_london-wallpapers-hd-a6-data-src-london-street.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock-ticking-2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock-ticking-5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vaqif_Mustafazade_-_Baki_geceleri_-_www.BiG.AZ.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ralph McTell Streets of London.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vagif Mustafazade - Baki gecalari.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
