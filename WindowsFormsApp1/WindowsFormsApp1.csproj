@@ -98,11 +98,5 @@
   <ItemGroup>
     <None Include="Resources\55-552679_london-wallpapers-hd-a6-data-src-london-street.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\clock-ticking-2.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\clock-ticking-5.wav" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
