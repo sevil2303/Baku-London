@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-            bakuBackground.Play();
+            bakuBackground.PlayLooping();
             mytimer.Interval = 1000;
             mytimer.Tick += Mytimer_Tick;
             mytimer.Start();
@@ -61,7 +61,7 @@ namespace WindowsFormsApp1
                 }
             }
             bakuBackground.Stop();  
-            londonBackground.Play();
+            londonBackground.PlayLooping();
             this.BackgroundImage = Resources._55_552679_london_wallpapers_hd_a6_data_src_london_street;
             londonLbl.Text = "London";
             londonLbl.ForeColor = Color.Black;          
@@ -94,7 +94,7 @@ namespace WindowsFormsApp1
         {
             mytimer.Stop();
             londonBackground.Stop();    
-            bakuBackground.Play();
+            bakuBackground.PlayLooping();
             londonTimer.Stop();
             foreach (var control in Controls)
             {
